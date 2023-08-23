@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-image: url(../images/Starfield-1.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	color: #777;
+}
+
+input:focus::placeholder {
+	color: black;
+}
+
+.container {
+	width: 360px;
+	height: 380px;
+	margin: 10% auto;
+	background: rgb(255, 255, 255);
+	border-radius: 5px;
+	position: relative;
+	padding: 60px;
+	display: flex;
+	flex-direction: column;
+}
+
+.container form {
+	width: 280px;
+	position: absolute;
+	top: 60px;
+	left: 40px;
+}
+
+form input {
+	width: 100%;
+	padding: 10px 5px;
+	margin: 5px 0;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+}
+
+.btn-box {
+	width: 100%;
+	margin: 40px auto;
+	text-align: center;
+}
+
+form button {
+	width: 110px;
+	height: 35px;
+	margin: 0 10px;
+	background: linear-gradient(to right, #ff105f, #2a75e6);
+	border-radius: 30px;
+	border: 0;
+	outline: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+form button:hover {
+	background: rgb(114, 23, 193);
+	transition-duration: .8s;
+}
+
+.group {
+	width: 100%;
+	margin: 40px auto;
+	text-align: center;
+	font-size: x-small;
+
+}
+
+a {
+	color: #777;
+	margin-right: 15px;
+}
+
+a:hover {
+	color: #253ecf;
+}

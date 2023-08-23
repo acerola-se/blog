@@ -1,0 +1,196 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	background: url(Starfield-1.jpg);
+	background-size: cover;
+	background-position: right;
+}
+
+header{
+	position: fixed;
+	width: 100%;
+	height: 65px;
+	padding: 0 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #111;
+	z-index: 1000;
+}
+
+header .logo{
+	color: #fff;
+	font-size: 30px;
+	text-decoration: none;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+
+header ul{
+	position: relative;
+	display: flex;
+}
+
+header ul li{
+	position: relative;
+	list-style: none;
+}
+
+header ul li a{
+	position: relative;
+	padding: 5px 10px;
+	color: #fff;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+header ul li a:hover{
+	background: #205aff;
+    transition: 1s;
+}
+
+.toggle{
+	display: none;
+}
+
+.admin-wrapper{
+	display: flex;
+	height: 100vh;
+}
+
+.admin-wrapper .left-sidebar{
+	width: 180px;
+	height: 100%;
+	background: #010415;
+	margin-top: 65px;
+}
+
+.admin-wrapper .left-sidebar ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.admin-wrapper .left-sidebar ul li a {
+	padding: 15px;
+	display: block;
+	border-bottom: 1px solid rgb(27, 28, 28);
+	color: aliceblue;
+	text-decoration: none;
+}
+.admin-wrapper .left-sidebar ul li a:hover{
+	background: #0d1c46;
+}
+
+
+.admin-wrapper .admin-content{
+	flex: 8;
+	height: 100%;
+	padding: 100px 100px 100px;
+	overflow-y: scroll;
+}
+
+.admin-content .page-title{
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.admin-content button {
+	width: 100px;
+	height: 35px;
+	margin: 5px;
+	background: #030b36;
+	color: aliceblue;
+	border-radius: 3px;
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+}
+
+
+
+.content{
+	min-width: 60%;
+}
+
+.content h2{
+	color: #fff;
+}
+
+form div{
+	display: flex;
+	flex-direction: column;
+}
+
+form label{
+	color: #fff;
+}
+
+.content form div{
+	margin-bottom: 20px;
+	padding: 15px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	background: #1d1d1d;
+	color: #fff;
+	resize: none;
+}
+
+.content form div textarea{
+	min-height: 400px;
+}
+
+.register-button{
+	
+	all: unset;
+	display: flex;
+	justify-content: center;
+}
+
+.register-button button{
+	margin: 20px;
+}
+
+button.add{
+	background: #0b1c89;
+	color: aliceblue;
+	
+}
+
+button.back{
+	background: #ad232e;
+	color: aliceblue;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

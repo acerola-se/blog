@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/blog-main.css}">
+    <title>Blog MainPage</title>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo">LOGO</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul>
+            <li><a href="#home" class="active" onclick="toggle()">Home</a></li>
+            <li><a href="#about" onclick="toggle()">About</a></li>
+            <li><a href="#blog" onclick="toggle()">blog</a></li>
+            <li><a th:href="@{/user/login}">Sign In</a></li>
+            <li><a th:href="@{/user/register}">Sign Up</a></li>
+        </ul>
+        <div class="toggle" onclick="toggle()"></div>
+    </header>
+
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Hello, <br><span>GUEST</span></h2>
+            <h3>Have a Good Time!</h3>
+            <a href="#blog" class="btn">Blog List</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
+        </div>
+        <div class="content">
+            <div class="contenBx w50">
+                <h3>I'm NO NAME.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog" id="blog">
+
+        <div class="blog-heading">
+            <h3>Blog List</h3>
+        </div>
+
+
+        <div class="blog-container">
+
+
+            <div class="blog-box" th:each="blog:${blogList}">
+                <div class="blog-box-img">
+                   <img th:src="@{/blog-img/{items}(items=${blog.blogImage})}" alt="blog img">
+                </div>
+
+                <div class="blog-box-text">
+                    <strong th:text="${blog.topics}"></strong>
+                    <a href="#" th:text="${blog.blogTitle}"></a>
+                    <p th:text="${blog.blogDetail}"></p>
+                </div>
+
+                <div class="blog-author">
+                    <div class="blog-author-text">
+                        <strong th:text="${userName}"></strong>
+                        <span th:text="${#temporals.format(blog.registerDate, 'yyyy/MM/dd')}"></span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+           <!-- <div class="blog-box">
+                <div class="blog-box-img">
+                    <img src="../images/product2.jpg" alt="blog img">
+                </div>
+
+                <div class="blog-box-text">
+                    <strong>Artificial Intelligence</strong>
+                    <a href="#">Artificial Intelligence,What it is and How It is Used</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+
+                <div class="blog-author">
+                    <div class="blog-author-text">
+                        <strong>Awa</strong>
+                        <span>Jan 12,2023</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="blog-box">
+                <div class="blog-box-img">
+                    <img src="../images/product3.jpg" alt="blog img">
+                </div>
+
+                <div class="blog-box-text">
+                    <strong>Artificial Intelligence</strong>
+                    <a href="#">Artificial Intelligence,What it is and How It is Used</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+
+                <div class="blog-author">
+                    <div class="blog-author-text">
+                        <strong>Awa</strong>
+                        <span>Jan 12,2023</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="blog-box">
+                <div class="blog-box-img">
+                    <img src="../images/product4.jpg" alt="blog img">
+                </div>
+
+                <div class="blog-box-text">
+                    <strong>Artificial Intelligence</strong>
+                    <a href="#">Artificial Intelligence,What it is and How It is Used</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+
+                <div class="blog-author">
+                    <div class="blog-author-text">
+                        <strong>Awa</strong>
+                        <span>Jan 12,2023</span>
+                    </div>
+                </div>
+
+            </div>
+            -->
+
+        </div>
+
+    </section>
+    <div class="copyright">
+        <p>Copyright @ 2023 Learner All Right Reserved.</p>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>

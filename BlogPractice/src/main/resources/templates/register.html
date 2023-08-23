@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/css/register.css}">
+	<title>Register</title>
+</head>
+
+<body>
+	<div class="container">
+
+		<form class="form" th:action="@{/user/register/process}" id="Form" method="post">
+			<h2>Sign Up</h2>
+			<input type="username" name="userName" placeholder="UserName" required>
+			<input type="email" name="email" placeholder="Email" required>
+			<input type="password" name="password" placeholder="Password" required>
+
+			<div class="btn-box">
+				<button name="register" id="register">Register</button>
+			</div>
+			<div class="group">
+				<a th:href="@{/user/login}">Sign In?</a>
+
+			</div>
+
+		</form>
+
+	</div>
+</body>
+
+</html>

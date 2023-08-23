@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/css/blog-register.css}">
+	<title>Blog Register</title>
+</head>
+
+<body>
+	<header>
+		<a href="#" class="logo">LOGO</a>
+		<ul>
+			<li><a th:href="@{/user/blog/list}" class="active">Home</a></li>
+			<li><a th:href="@{/user/blog/logout}">Logout</a></li>
+		</ul>
+		<div class="toggle" onclick="toggle()"></div>
+	</header>
+
+	<div class="admin-wrapper">
+
+		<!-- 左側のバー -->
+		<div class="left-sidebar">
+			<ul>
+				<li><a href="#">Manage Posts</a></li>
+				<li><a href="#">Manage Topics</a></li>
+			</ul>
+		</div>
+
+		<!-- 管理者のコンテンツ -->
+		<div class="admin-content">
+			<div class="button-group">
+				<button name="add-post" id="add-post">
+					<a th:href="@{/user/blog/register}">Add Post</a>
+				</button>
+				<button name="manage-posts" id="manage-posts">
+					<a th:href="@{/user/blog/delete/list}">Manage Posts</a>
+				</button>
+				<!-- <a href="#" class="button">Add Post</a>
+                <a href="#" class="button">Manage Posts</a> -->
+			</div>
+
+			<div class="content">
+				<h2 class="page-title">UpDate Posts</h2>
+
+				<form th:action="@{/user/blog/update}" method="post" enctype="multipart/form-data">
+					<div class="title">
+						<label>Title</label>
+						<input type="text" name="blogTitle" th:value="${blogList.blogTitle}">
+					</div>
+
+					<div class="date">
+						<label>Date</label>
+						<input type="date" name="registerDate" th:value="${blogList.registerDate}">
+					</div>
+
+					<div class="topics">
+						<label>Topics</label>
+						<input type="text" name="topics" th:value="${blogList.topics}">
+					</div>
+
+					<div class="image">
+						<label>Image</label>
+						<input type="file" name="blogImage">
+					</div>
+
+					<div class="body">
+						<label>Body</label>
+						<textarea name="blogDetail" id="body" th:text="${blogList.blogDetail}"></textarea>
+					</div>
+
+
+
+					<input type="hidden" name="blogId" th:value="${blogList.blogId}">
+
+
+
+					<div class="register-button">
+						<button class="add">Update</button>
+						<button class="back" type="button" onclick="history.back()">Back</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>
